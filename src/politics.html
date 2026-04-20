@@ -46,47 +46,25 @@
       referrerpolicy="no-referrer"
     />
     <style>
-      .zoom-image {
-        overflow: hidden;
+      .zoom-image { overflow: hidden; }
+      .zoom-image img { transition: transform 0.35s ease; }
+      .zoom-image:hover img { transform: scale(1.06); }
+      article {
+        scroll-margin-top: 120px; 
+        transition: background-color 0.3s ease;
       }
 
-      .zoom-image img {
-        transition: transform 0.35s ease;
-      }
-
-      .zoom-image:hover img {
-        transform: scale(1.06);
-      }
-      .zoom-image {
-        overflow: hidden;
-      }
-
-      .zoom-image img {
-        transition: transform 0.35s ease;
-      }
-
-      .zoom-image:hover img {
-        transform: scale(1.06);
-      }
-
-      .article:target {
-        animation: highlight-pulse 2s ease-out;
-        border-left: 6px solid #b91c1c; /* BBC signature red highlight */
+      article:target {
+        animation: ring-pulse 1.5s ease-out;
+        border: #b91c1c 2px solid;
         background-color: #fffafa;
-        padding-left: 1.5rem;
+        position: relative;
+        z-index: 10;
       }
-
-      @keyframes highlight-pulse {
-        0% { background-color: #fee2e2; }
-        100% { background-color: white; }
-      }
-
       .topic-link:focus {
         border-bottom: 3px solid #b91c1c;
         background-color: #fef2f2;
-        outline: none;
       }
-     
     </style>
   </head>
   <body class="min-h-screen bg-gray-100 text-slate-900">
@@ -97,10 +75,10 @@
         <div
           class="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between"
         >
-          <a
-            href="../index.html"
+         <a
+            href="index.html"
             class="text-2xl font-black tracking-tight text-slate-900"
-            >NewScope</a
+            > <span class="text-red-700">NewS</span>cope</a
           >
           <nav aria-label="Main navigation">
             <ul class="flex flex-wrap items-center gap-2 text-sm font-semibold">
@@ -240,6 +218,56 @@
               <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">United Kingdom | 3 HRS AGO</p>
             </div>
           </article>
+          <article id="EUROPE" class="grid gap-6 rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-100 transition-all duration-500 sm:grid-cols-[200px_1fr]">
+            <div class="zoom-image rounded-lg aspect-video sm:aspect-square">
+              <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/2ab9/live/08e295a0-3b47-11f1-879d-1b2f5c3919b8.jpg.webp" 
+                   alt="A sealed jar of baby food on a grocery shelf with emergency services tape in the background" 
+                   class="h-full w-full object-cover" />
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-slate-900 hover:text-red-700 cursor-pointer transition">
+                Rat poison found in HiPP baby food jar in Austria, police say
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                Authorities in Burgenland have issued an urgent public health warning after a customer discovered contaminants in a jar of carrot and potato purée. Investigations into the supply chain are currently underway.
+              </p>
+              <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Europe | 5 HRS AGO</p>
+            </div>
+          </article>
+
+          <article id="AFRICA" class="grid gap-6 rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-100 transition-all duration-500 sm:grid-cols-[200px_1fr]">
+            <div class="zoom-image rounded-lg aspect-video sm:aspect-square">
+              <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/b4a9/live/9e2d45b0-3caa-11f1-8e26-931170ebc0de.jpg.webp" 
+                   alt="Logistics crates and military hardware being inspected at an airport hangar" 
+                   class="h-full w-full object-cover" />
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-slate-900 hover:text-red-700 cursor-pointer transition">
+                Iranian woman arrested in US for allegedly trafficking arms to Sudan
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                Federal prosecutors have detained a 44-year-old woman in Los Angeles, accusing her of brokering a multimillion-dollar deal involving drones and ammunition intended for the Sudanese defense ministry.
+              </p>
+              <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Africa | 8 HRS AGO</p>
+            </div>
+          </article>
+
+          <article id="MIDDLEEAST" class="grid gap-6 rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-100 transition-all duration-500 sm:grid-cols-[200px_1fr]">
+            <div class="zoom-image rounded-lg aspect-video sm:aspect-square">
+              <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/90dd/live/a9950e00-3a62-11f1-9d5c-8ba507d7dbde.jpg.webp" 
+                   alt="A geopolitical map of the Levant region showing major diplomatic borders" 
+                   class="h-full w-full object-cover" />
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-slate-900 hover:text-red-700 cursor-pointer transition">
+                A moment of risk and opportunity: How ceasefires boost US-Iran talks
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                As the din of war fades in Lebanon and Iran, analysts suggest the current "shaky" ceasefires provide a rare diplomatic window for historic breakthroughs in regional stability.
+              </p>
+              <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Middle East | 12 HRS AGO</p>
+            </div>
+          </article>
 
           </div>
       </section>
@@ -248,12 +276,63 @@
    
     </main>
 
-    <footer class="border-t border-red-100 bg-white py-6">
-      <div
-        class="mx-auto max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8"
-      >
-        Politics coverage by NewScope.
+   <footer class="mt-20 border-t border-slate-200 bg-white pt-16 pb-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
+      
+      <div class="space-y-4">
+        <a href="#" class="text-2xl font-black text-slate-900">NewScope<span class="text-red-700">.</span></a>
+        <p class="text-sm leading-relaxed text-slate-500">
+          Independent journalism for a complex world. We bring you the latest in politics, tech, and global affairs with precision and speed.
+        </p>
+        <div class="flex gap-4 text-slate-400">
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-youtube"></i></a>
+        </div>
       </div>
-    </footer>
+
+      <div>
+        <h4 class="mb-4 text-xs font-black uppercase tracking-widest text-slate-900">Sections</h4>
+        <ul class="space-y-2 text-sm font-semibold text-slate-500">
+          <li><a href="politics.html" class="hover:text-red-700">Politics</a></li>
+          <li><a href="technology.html" class="hover:text-red-700">Technology</a></li>
+          <li><a href="sports.html" class="hover:text-red-700">Sports</a></li>
+          <li><a href="entertainment.html" class="hover:text-red-700">Entertainment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="mb-4 text-xs font-black uppercase tracking-widest text-slate-900">Support</h4>
+        <ul class="space-y-2 text-sm font-semibold text-slate-500">
+          <li><a href="#" class="hover:text-red-700">About Us</a></li>
+          <li><a href="#" class="hover:text-red-700">Editorial Policy</a></li>
+          <li><a href="#" class="hover:text-red-700">Contact Support</a></li>
+          <li><a href="#" class="hover:text-red-700">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="text-xs font-black uppercase tracking-widest text-slate-900">Newsletter</h4>
+        <p class="text-xs text-slate-500">Get the morning's top stories in your inbox.</p>
+        <form class="flex overflow-hidden rounded-lg border border-slate-200">
+          <input type="email" placeholder="Email address" class="w-full px-3 py-2 text-sm outline-none placeholder:text-slate-400" />
+          <button type="submit" class="bg-red-700 px-4 py-2 text-white transition hover:bg-slate-900">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col items-center justify-between border-t border-slate-100 pt-8 text-[10px] font-bold uppercase tracking-widest text-slate-400 md:flex-row">
+      <p>&copy; 2026 NewScope Media Group. All rights reserved.</p>
+      <div class="mt-4 flex gap-6 md:mt-0">
+        <span>Phnom Penh, Cambodia</span>
+        <span>Verified Editorial Site</span>
+      </div>
+    </div>
+  </div>
+</footer>
   </body>
 </html>

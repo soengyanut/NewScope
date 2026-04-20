@@ -71,7 +71,7 @@
           <a
             href="index.html"
             class="text-2xl font-black tracking-tight text-slate-900"
-            >NewScope</a
+            > <span class="text-red-700">NewS</span>cope</a
           >
           <nav aria-label="Main navigation">
             <ul class="flex flex-wrap items-center gap-2 text-sm font-semibold">
@@ -379,12 +379,63 @@
       </div>
     </main>
 
-    <footer class="border-t border-slate-200 bg-white py-6">
-      <div
-        class="mx-auto max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8"
-      >
-        &copy; 2026 NewScope. Trusted reporting, every hour.
+    <footer class="mt-20 border-t border-slate-200 bg-white pt-16 pb-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
+      
+      <div class="space-y-4">
+        <a href="#" class="text-2xl font-black text-slate-900">NewScope<span class="text-red-700">.</span></a>
+        <p class="text-sm leading-relaxed text-slate-500">
+          Independent journalism for a complex world. We bring you the latest in politics, tech, and global affairs with precision and speed.
+        </p>
+        <div class="flex gap-4 text-slate-400">
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="transition hover:text-red-700"><i class="fa-brands fa-youtube"></i></a>
+        </div>
       </div>
-    </footer>
+
+      <div>
+        <h4 class="mb-4 text-xs font-black uppercase tracking-widest text-slate-900">Sections</h4>
+        <ul class="space-y-2 text-sm font-semibold text-slate-500">
+          <li><a href="politics.html" class="hover:text-red-700">Politics</a></li>
+          <li><a href="technology.html" class="hover:text-red-700">Technology</a></li>
+          <li><a href="sports.html" class="hover:text-red-700">Sports</a></li>
+          <li><a href="entertainment.html" class="hover:text-red-700">Entertainment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="mb-4 text-xs font-black uppercase tracking-widest text-slate-900">Support</h4>
+        <ul class="space-y-2 text-sm font-semibold text-slate-500">
+          <li><a href="#" class="hover:text-red-700">About Us</a></li>
+          <li><a href="#" class="hover:text-red-700">Editorial Policy</a></li>
+          <li><a href="#" class="hover:text-red-700">Contact Support</a></li>
+          <li><a href="#" class="hover:text-red-700">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="text-xs font-black uppercase tracking-widest text-slate-900">Newsletter</h4>
+        <p class="text-xs text-slate-500">Get the morning's top stories in your inbox.</p>
+        <form class="flex overflow-hidden rounded-lg border border-slate-200">
+          <input type="email" placeholder="Email address" class="w-full px-3 py-2 text-sm outline-none placeholder:text-slate-400" />
+          <button type="submit" class="bg-red-700 px-4 py-2 text-white transition hover:bg-slate-900">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col items-center justify-between border-t border-slate-100 pt-8 text-[10px] font-bold uppercase tracking-widest text-slate-400 md:flex-row">
+      <p>&copy; 2026 NewScope Media Group. All rights reserved.</p>
+      <div class="mt-4 flex gap-6 md:mt-0">
+        <span>Phnom Penh, Cambodia</span>
+        <span>Verified Editorial Site</span>
+      </div>
+    </div>
+  </div>
+</footer>
   </body>
 </html>

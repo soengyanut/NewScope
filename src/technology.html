@@ -39,6 +39,30 @@
     />
     <title>NewScope | Technology</title>
     <link rel="stylesheet" href="output.css" />
+    <style>
+      .zoom-image {
+        overflow: hidden;
+      }
+      .zoom-image img {
+        transition: transform 0.35s ease;
+      }
+      .zoom-image:hover img {
+        transform: scale(1.06);
+      }
+      article {
+        scroll-margin-top: 120px;
+        transition: background-color 0.3s ease;
+      }
+      article:target {
+        animation: ring-fade 1.5s ease-out;
+        background-color: #fffafa;
+        position: relative;
+        z-index: 20;
+        outline: 3px solid #b91c1c; /* Matches Politics Red */
+        outline-offset: 4px;
+        border-radius: 0.75rem;
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-gray-100 text-slate-900">
     <header
@@ -49,9 +73,10 @@
           class="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between"
         >
           <a
-            href="../index.html"
+            href="index.html"
             class="text-2xl font-black tracking-tight text-slate-900"
-            >NewScope</a
+          >
+            <span class="text-red-700">NewS</span>cope</a
           >
           <nav aria-label="Main navigation">
             <ul class="flex flex-wrap items-center gap-2 text-sm font-semibold">
@@ -137,7 +162,7 @@
 
       <section aria-labelledby="tech-news-grid" class="space-y-6">
         <h2 id="tech-news-grid" class="text-2xl font-black tracking-tight">
-          Tech News Grid
+          Tech News
         </h2>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <article
@@ -197,42 +222,281 @@
         </div>
       </section>
 
-      <section aria-labelledby="popular-companies" class="space-y-6">
-        <h2 id="popular-companies" class="text-2xl font-black tracking-tight">
-          Popular Tech Companies
-        </h2>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div
-            class="rounded-xl border border-red-200 bg-white p-4 text-sm font-semibold text-red-800 shadow-sm transition hover:border-red-400 hover:shadow-md"
+      <section class="grid gap-8 lg:grid-cols-12">
+        <div class="lg:col-span-8">
+          <article
+            class="group relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200"
           >
-            Nova Systems
-          </div>
-          <div
-            class="rounded-xl border border-red-200 bg-white p-4 text-sm font-semibold text-red-800 shadow-sm transition hover:border-red-400 hover:shadow-md"
-          >
-            QuantumLink
-          </div>
-          <div
-            class="rounded-xl border border-red-200 bg-white p-4 text-sm font-semibold text-red-800 shadow-sm transition hover:border-red-400 hover:shadow-md"
-          >
-            PixelForge Labs
-          </div>
-          <div
-            class="rounded-xl border border-red-200 bg-white p-4 text-sm font-semibold text-red-800 shadow-sm transition hover:border-red-400 hover:shadow-md"
-          >
-            Orbit AI
-          </div>
+            <div class="zoom-image aspect-video">
+              <img
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200"
+                alt="AI Neural Network Visualization"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="tech-badge">Artificial Intelligence</span>
+              <h2
+                class="text-4xl font-black leading-tight text-slate-900 group-hover:text-red-700 transition"
+              >
+                The Generative Gap: Why Silicon Valley is Pivoting to
+                "Reasoning" Models
+              </h2>
+              <p class="text-lg text-slate-600 leading-relaxed">
+                As LLMs hit a plateau, the race for AGI shifts toward
+                system-level reasoning. Here is how the next generation of AI
+                will think, not just predict.
+              </p>
+              <div
+                class="flex items-center gap-4 text-xs font-bold text-slate-400"
+              >
+                <span>By Tech Editorial Team</span>
+                <span><i class="fa-regular fa-clock mr-1"></i> 45 MIN AGO</span>
+              </div>
+            </div>
+          </article>
         </div>
+
+        <aside class="lg:col-span-4 space-y-6">
+          <h3
+            class="text-sm font-black uppercase tracking-widest text-red-700 border-b-2 border-red-700 pb-2"
+          >
+            Top in Tech
+          </h3>
+          <div class="space-y-6">
+            <a href="#" class="group flex gap-4">
+              <span
+                class="text-3xl font-black text-slate-300 group-hover:text-red-200 transition"
+                >01</span
+              >
+              <div>
+                <h4 class="font-bold leading-snug group-hover:underline">
+                  Apple's Foldable iPhone Leak: Everything We Know
+                </h4>
+                <p class="text-xs text-slate-500 mt-1">HARDWARE | 2H AGO</p>
+              </div>
+            </a>
+            <a href="#" class="group flex gap-4">
+              <span
+                class="text-3xl font-black text-slate-300 group-hover:text-red-200 transition"
+                >02</span
+              >
+              <div>
+                <h4 class="font-bold leading-snug group-hover:underline">
+                  Cybersecurity Alert: New Zero-Day Exploit Found in Browsers
+                </h4>
+                <p class="text-xs text-slate-500 mt-1">SECURITY | 4H AGO</p>
+              </div>
+            </a>
+            <a href="#" class="group flex gap-4">
+              <span
+                class="text-3xl font-black text-slate-300 group-hover:text-red-200 transition"
+                >03</span
+              >
+              <div>
+                <h4 class="font-bold leading-snug group-hover:underline">
+                  SpaceX Succeeds in Starship Cargo Deployment
+                </h4>
+                <p class="text-xs text-slate-500 mt-1">AEROSPACE | 6H AGO</p>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section
+        class="bg-slate-50 rounded-2xl p-6 flex flex-wrap gap-3 items-center"
+      >
+        <span class="text-xs font-black uppercase text-slate-400 mr-2"
+          >Topics:</span
+        >
+        <a
+          href="#AI"
+          class="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-bold hover:border-red-700 hover:text-red-700 transition"
+          >AI</a
+        >
+        <a
+          href="#CYBER"
+          class="rounded-lg border border-red-200 bg-white px-4 py-2 text-sm font-bold hover:border-red-700 hover:text-red-700 transition"
+          >CYBERSECURITY</a
+        >
+        <a
+          href="#MOBILE"
+          class="rounded-lg border border-red-200 bg-white px-4 py-2 text-sm font-bold hover:border-red-700 hover:text-red-700 transition"
+          >MOBILE</a
+        >
+      </section>
+
+      <section class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <article id="AI" class="space-y-4">
+          <div class="zoom-image rounded-xl aspect-video shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600"
+              alt="Server room"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <span class="tech-badge">Cloud</span>
+          <h3 class="text-xl font-bold hover:text-red-700 transition">
+            <a href="#">Data Centers Turn to Nuclear Power to Fuel AI Growth</a>
+          </h3>
+          <p class="text-sm text-slate-600">
+            Major tech firms are investing in small modular reactors to ensure
+            24/7 carbon-free energy.
+          </p>
+        </article>
+
+        <article id="CYBER" class="space-y-4">
+          <div class="zoom-image rounded-xl aspect-video shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600"
+              alt="Digital security"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <span class="tech-badge">Security</span>
+          <h3 class="text-xl font-bold hover:text-red-700 transition">
+            <a href="#"
+              >The Password is Dead: Why Passkeys Are Finally Taking Over</a
+            >
+          </h3>
+          <p class="text-sm text-slate-600">
+            Google and Apple report a 400% increase in passkey adoption over the
+            last fiscal quarter.
+          </p>
+        </article>
+
+        <article id="MOBILE" class="space-y-4">
+          <div class="zoom-image rounded-xl aspect-video shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600"
+              alt="Smartphone"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <span class="tech-badge">Hardware</span>
+          <h3 class="text-xl font-bold hover:text-red-700 transition">
+            <a href="#"
+              >Next-Gen Batteries Could Charge Your Phone in 5 Minutes</a
+            >
+          </h3>
+          <p class="text-sm text-slate-600">
+            New graphene-based anodes are entering the final stage of commercial
+            testing.
+          </p>
+        </article>
       </section>
     </main>
 
-    <footer class="border-t border-red-100 bg-white py-6">
-      <div
-        class="mx-auto max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8"
-      >
-        Technology coverage by NewScope.
+    <footer class="mt-20 border-t border-slate-200 bg-white pt-16 pb-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
+          <div class="space-y-4">
+            <a href="#" class="text-2xl font-black text-slate-900"
+              >NewScope<span class="text-red-700">.</span></a
+            >
+            <p class="text-sm leading-relaxed text-slate-500">
+              Independent journalism for a complex world. We bring you the
+              latest in politics, tech, and global affairs with precision and
+              speed.
+            </p>
+            <div class="flex gap-4 text-slate-400">
+              <a href="#" class="transition hover:text-red-700"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" class="transition hover:text-red-700"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="transition hover:text-red-700"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="transition hover:text-red-700"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="mb-4 text-xs font-black uppercase tracking-widest text-slate-900"
+            >
+              Sections
+            </h4>
+            <ul class="space-y-2 text-sm font-semibold text-slate-500">
+              <li>
+                <a href="politics.html" class="hover:text-red-700">Politics</a>
+              </li>
+              <li>
+                <a href="technology.html" class="hover:text-red-700"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a href="sports.html" class="hover:text-red-700">Sports</a>
+              </li>
+              <li>
+                <a href="entertainment.html" class="hover:text-red-700"
+                  >Entertainment</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="mb-4 text-xs font-black uppercase tracking-widest text-slate-900"
+            >
+              Support
+            </h4>
+            <ul class="space-y-2 text-sm font-semibold text-slate-500">
+              <li><a href="#" class="hover:text-red-700">About Us</a></li>
+              <li>
+                <a href="#" class="hover:text-red-700">Editorial Policy</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-700">Contact Support</a>
+              </li>
+              <li><a href="#" class="hover:text-red-700">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h4
+              class="text-xs font-black uppercase tracking-widest text-slate-900"
+            >
+              Newsletter
+            </h4>
+            <p class="text-xs text-slate-500">
+              Get the morning's top stories in your inbox.
+            </p>
+            <form
+              class="flex overflow-hidden rounded-lg border border-slate-200"
+            >
+              <input
+                type="email"
+                placeholder="Email address"
+                class="w-full px-3 py-2 text-sm outline-none placeholder:text-slate-400"
+              />
+              <button
+                type="submit"
+                class="bg-red-700 px-4 py-2 text-white transition hover:bg-slate-900"
+              >
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="mt-16 flex flex-col items-center justify-between border-t border-slate-100 pt-8 text-[10px] font-bold uppercase tracking-widest text-slate-400 md:flex-row"
+        >
+          <p>&copy; 2026 NewScope Media Group. All rights reserved.</p>
+          <div class="mt-4 flex gap-6 md:mt-0">
+            <span>Phnom Penh, Cambodia</span>
+            <span>Verified Editorial Site</span>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
 </html>
-
